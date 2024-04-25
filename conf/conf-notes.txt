@@ -2,7 +2,8 @@
 Common bitbake targets are:
 
     development-image
-    production-image
+    production-image [*][**]
 
-production-image requires that the ROOT_PASSWORD variable be set. See
-conf/local.conf for details.
+*  production-image support is subject to availability as per user-manual.
+** production-image requires that the ROOT_PASSWORD variable be set. See
+   conf/local.conf for details.
