@@ -14,25 +14,13 @@ MACHINE ??= "qemux86"
 # The EXTRA_IMAGE_FEATURES variable allows groups of packages to be added to
 # the generated images. See the Flex OS User’s and Reference Manual for
 # supported image features
-EXTRA_IMAGE_FEATURES ?= ""
-
-# Image features for development-image
-IMAGE_FEATURES_DEVELOPMENT ?= "debug-tweaks"
-IMAGE_FEATURES_DEVELOPMENT:append:flex-bsp = " codebench-debug ssh-server-openssh"
-EXTRA_IMAGE_FEATURES = "${IMAGE_FEATURES_DEVELOPMENT}"
+EXTRA_IMAGE_FEATURES ?= "debug-tweaks codebench-debug ssh-server-openssh"
 
 # Set the root password.
 # Set to '0' to explicitly allow the empty root password
 # Set to '*' to explicitly disable root login
 #ROOT_PASSWORD = "0"
 IMAGE_CLASSES:append = " image-root-password"
-
-# Enable and disable distro features. To disable a feature, prefix it with ~
-#USER_FEATURES += "~x11"
-
-# Enable runtime testing with ptest
-#USER_FEATURES += "ptest"
-#EXTRA_IMAGE_FEATURES += "ptest-pkgs"
 
 # How many tasks bitbake should run in parallel. Default: NUM_CPUS
 #BB_NUMBER_THREADS ?= "${@int(oe.utils.cpu_count())}"
